@@ -2,7 +2,16 @@ import {useState} from 'react';
 
 
 function Form(){
-    const [form, setForm] = useState({userName:"",userEmail:""})
+    const [form, setForm] = useState({
+        pregnancies:"",
+        glucose:"",
+        blood_pressure:"",
+        skin_thickness:"",
+        inslulin_level:"",
+        bmi:"",
+        diabetes_pedigree:"",
+        age:""
+    })
     const handleSubmit = (event)=>{
         event.preventDefault();
         console.log("Form Submitted");
@@ -11,17 +20,25 @@ function Form(){
 
     const onChangeFunc = (event) => {
         console.log("Changed input field");
-        const name = event.target.name;
-        const value = event.target.value;
-        console.log(`event.target.name:${name},event.target.value:${value}`)
-        console.log('haha'+value)
-        setForm({...form, [name]:value})    
+        const input_name = event.target.name;
+        const input_value = event.target.value;
+        console.log(`event.target.name:${input_name},event.target.value:${input_value}`)
+        console.log('haha'+input_value)
+        setForm({...form, [input_name]:input_value})    
         }
     return (
         <form onSubmit={handleSubmit} >
-            <input type="text" name="userName" onChange={onChangeFunc} placeholder="name (e.g. John)"></input>
-            <input type="text" name="userEmail" onChange={onChangeFunc} placeholder="Email(e.g. John)"></input>
-        <button type="submit">Submit Form</button>
+            <h4>Diabetes Prediction</h4>
+            <p>Example to Predict Probability of Diabetes</p>
+            <input type="text" name="pregnancies" onChange={onChangeFunc} placeholder="Number of pregnancies"></input>
+            <input type="text" name="glucose" onChange={onChangeFunc} placeholder="Glucose level in Sugar"></input>
+            <input type="text" name="blood_pressure" onChange={onChangeFunc} placeholder="Blood Pressure"></input>
+            <input type="text" name="skin_thickness" onChange={onChangeFunc} placeholder="Skin Thickness"></input>
+            <input type="text" name="inslulin_level" onChange={onChangeFunc} placeholder="Insulin Level"></input>
+            <input type="text" name="bmi" onChange={onChangeFunc} placeholder="Body Mass Index (BMI)"></input>
+            <input type="text" name="diabetes_pedigree" onChange={onChangeFunc} placeholder="Diabetes Pedigree Function"></input>
+            <input type="text" name="age" onChange={onChangeFunc} placeholder="Age"></input>
+            <button type="submit">Submit Form</button>
         </form>
     );
 
