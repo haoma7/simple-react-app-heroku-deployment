@@ -2,7 +2,7 @@
 
 This is a web app for **diabete prediction**. The front-end is **React-based** and the back-end is a **Flask-based** server utilizing a simple KNN. 
 
-This repository is for the front-end app. The back-end can be found 
+This repository is for the front-end app. The back-end can be found @ https://github.com/haoma7/flask-app-knn-backend
 
 The web app has been deployed to:
 1. Heroku: https://ds-frontend-deployment-hao.herokuapp.com/
